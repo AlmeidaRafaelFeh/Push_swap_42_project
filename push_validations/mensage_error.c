@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_number.c                                     :+:      :+:    :+:   */
+/*   mensage_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 20:19:41 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/09 20:20:31 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/11 16:18:41 by rafreire          #+#    #+#             */
+/*   Updated: 2025/09/12 11:48:05 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+void	mensage_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}

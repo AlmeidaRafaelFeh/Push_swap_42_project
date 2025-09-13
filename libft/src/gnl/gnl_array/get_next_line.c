@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:38:12 by rafreire          #+#    #+#             */
-/*   Updated: 2025/08/23 18:10:19 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:42:31 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,40 +108,34 @@ void	*free_mem(void **ptr1, void **ptr2)
 	return (NULL);
 }
 
-#include <stdio.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(void)
-{
-    int fd3;
-	char *str;
-	
-    fd3 = open("teste.txt", O_RDONLY);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-	str = get_next_line(fd3);
-	printf("%s", str);
-    return 0;
-}
+// int main(void)
+// {
+//     int fd3;
+// 	char *str;
+//     fd3 = open("teste.txt", O_RDONLY);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+// 	str = get_next_line(fd3);
+// 	printf("%s", str);
+//     return 0;
+// }

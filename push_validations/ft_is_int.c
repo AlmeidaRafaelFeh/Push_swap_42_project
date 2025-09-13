@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_is_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 09:46:02 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/12 11:35:07 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/09 20:19:39 by rafreire          #+#    #+#             */
+/*   Updated: 2025/09/12 12:24:29 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int	is_min_max(long *nb, int len)
 {
-	size_t	i;
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if ((nb[i] < INT_MIN) || (nb[i] > INT_MAX))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+long	ft_atol(const char *nptr)
+{
+	int		i;
 	int		sign;
-	int		result;
+	long	result;
 
 	i = 0;
 	sign = 1;

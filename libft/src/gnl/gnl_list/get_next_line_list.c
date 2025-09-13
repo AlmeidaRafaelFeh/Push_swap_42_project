@@ -6,11 +6,11 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 11:42:53 by rafreire          #+#    #+#             */
-/*   Updated: 2025/08/16 18:30:36 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:54:23 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_list.h"
 
 char	*get_next_line(int fd)
 {
@@ -47,8 +47,8 @@ void	read_and_stash(int fd, t_gnline **stash)
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
 		{
-			ft_lstclear(stash);
-			break;
+			ft_lstclear (stash);
+			break ;
 		}
 		buffer[bytes_read] = '\0';
 		if (!ft_newlst_add_back(stash, buffer))
@@ -67,12 +67,11 @@ int	found_newline(t_gnline *stash)
 	t_gnline	*current;
 
 	current = stash;
-	
 	while (current)
 	{
 		i = 0;
-		if(!current->content)
-			break;
+		if (!current->content)
+			break ;
 		while (current->content[i])
 		{
 			if (current->content[i] == '\n')
@@ -148,7 +147,7 @@ void	copy_line(t_gnline *stash, char *line, size_t max_len)
 // {
 //     int fd3;
 // 	char *str;
-	
+
 //     fd3 = open("test_files/43_with_nl", O_RDONLY);
 // 	str = get_next_line(fd3);
 // 	printf("%s", str);

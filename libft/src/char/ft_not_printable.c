@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_not_printable.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 09:46:02 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/12 11:35:07 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/13 13:49:28 by rafreire          #+#    #+#             */
+/*   Updated: 2025/09/13 14:13:46 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(const char *nptr)
+int	ft_not_printable(unsigned char c)
 {
-	size_t	i;
-	int		sign;
-	int		result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if ((c >= 0 && c <= 31) || c == 127)
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
+		return (1);
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + (nptr[i] - '0');
-	i++;
-	}
-	return (result * sign);
+	return (0);
 }

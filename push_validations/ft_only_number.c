@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_only_number.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 09:46:02 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/12 11:35:07 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/09 20:19:41 by rafreire          #+#    #+#             */
+/*   Updated: 2025/09/13 15:48:00 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_only_number(char *str)
 {
-	size_t	i;
-	int		sign;
-	int		result;
+	int	i;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (str[i] != '\0')
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + (nptr[i] - '0');
+		while (ft_ispace(str[i]))
+			i++;
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		if (!ft_isdigit(str[i]))
+			return (1);
+		while (ft_isdigit(str[i]))
+			i++;
+		if (str[i] && !ft_ispace(str[i]))
+			return (1);
 	i++;
 	}
-	return (result * sign);
+	return (0);
 }

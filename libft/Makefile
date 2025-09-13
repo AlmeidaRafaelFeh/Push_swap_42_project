@@ -9,6 +9,8 @@ SRCS = \
 	src/char/ft_tolower.c \
 	src/char/ft_toupper.c \
 	src/char/ft_isprint.c \
+	src/char/ft_ispace.c \
+	src/char/ft_not_printable.c \
 	\
 	src/string/ft_strlen.c \
 	src/string/ft_strchr.c \
@@ -26,6 +28,7 @@ SRCS = \
 	src/string/ft_atoi.c \
 	src/string/ft_itoa.c \
 	src/string/ft_strnstr.c \
+	src/string/ft_strjoin_and_free.c \
 	\
 	src/mem/ft_memset.c \
 	src/mem/ft_bzero.c \
@@ -50,18 +53,13 @@ SRCS = \
 	src/list/ft_lstiter.c \
 	src/list/ft_lstmap.c \
 	\
-	src/gnl/gnl_list/get_next_line_utils.c \
-	src/gnl/gnl_list/get_next_line.c \
+	src/gnl/gnl_list/get_next_line_list_utils.c \
+	src/gnl/gnl_list/get_next_line_list.c \
 	\
 	src/gnl/gnl_array/get_next_line_utils.c \
 	src/gnl/gnl_array/get_next_line.c \
 	\
-	src/printf/ft_convert_nbr.c \
-	src/printf/ft_print_char.c \
-	src/printf/ft_print_nbr.c \
-	src/printf/ft_printf.c \
-	\
-
+	
 OBJS = $(SRCS:src/%.c=$(OBJDIR)/%.o)
 
 CC =	cc

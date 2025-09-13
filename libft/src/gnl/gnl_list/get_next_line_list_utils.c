@@ -6,11 +6,11 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 11:43:34 by rafreire          #+#    #+#             */
-/*   Updated: 2025/08/15 19:38:47 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:50:52 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_list.h"
 
 int	ft_newlst_add_back(t_gnline **lst, char *content)
 {
@@ -19,9 +19,7 @@ int	ft_newlst_add_back(t_gnline **lst, char *content)
 
 	new_list = malloc(sizeof(t_gnline));
 	if (!new_list)
-	{
 		return (0);
-	}
 	new_list->content = ft_strdup(content);
 	if (!new_list->content)
 	{
@@ -108,12 +106,13 @@ void	trim_stash(t_gnline **stash)
 			curr = curr->next;
 	}
 	if (found)
+	{
 		while (curr && curr->next)
 		{
 			curr = curr->next;
 			ft_newlst_add_back(&new, curr->content);
 		}
+	}
 	ft_lstclear(stash);
 	*stash = new;
 }
-
