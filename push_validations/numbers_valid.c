@@ -6,21 +6,17 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:20:07 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/13 12:12:36 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/13 20:33:49 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
 
-long	*numbers_valid(char *str)
+long	*numbers_valid(char *str, int len_numbers)
 {
-	int		len_numbers;
 	long	*numbers;
 
-	if (ft_only_number(str) == 1)
-		mensage_error();
-	len_numbers = numbers_len(str);
 	numbers = (long *)malloc(sizeof(long) * len_numbers);
 	if (!numbers)
 		return (0);
