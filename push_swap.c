@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:05:18 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/13 20:49:05 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/20 13:03:01 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int ac, char *av[])
 	int		size_a;
 	int		size_b;
 
+	
 	if (ac < 2)
 		mensage_error();
 	args = parse_args(ac, av);
