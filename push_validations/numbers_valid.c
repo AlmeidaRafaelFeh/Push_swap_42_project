@@ -6,33 +6,38 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:20:07 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/13 20:33:49 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/26 20:29:14 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
-long	*numbers_valid(char *str, int len_numbers)
+int	*numbers_valid(char *str, int len_numbers)
 {
 	long	*numbers;
+	int		*integer_nbs;
+	int		i;
 
+	i = 0;
 	numbers = (long *)malloc(sizeof(long) * len_numbers);
 	if (!numbers)
 		return (0);
 	clean_copy_arr(numbers, str);
 	if (is_min_max(numbers, len_numbers) == 1)
-	{
-		free (numbers);
-		mensage_error();
-	}
+		mensage_error_free_long(numbers);
 	if (ft_check_duplicates(numbers, len_numbers) == 1)
+		mensage_error_free_long(numbers);
+	integer_nbs = (int *)malloc(sizeof(int) * len_numbers);
+	if (!integer_nbs)
+		return (0);
+	while (i < len_numbers)
 	{
-		free (numbers);
-		mensage_error();
+		integer_nbs[i] = (int)numbers[i];
+		i++;
 	}
-	return (numbers);
-}	
+	free(numbers);
+	return (integer_nbs);
+}
 
 int	numbers_len(char *str)
 {

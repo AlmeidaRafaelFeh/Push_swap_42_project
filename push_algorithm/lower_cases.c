@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_duplicates.c                              :+:      :+:    :+:   */
+/*   lower_cases.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 20:19:36 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 14:29:27 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/26 18:37:39 by rafreire          #+#    #+#             */
+/*   Updated: 2025/09/27 17:49:18 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_check_duplicates(long *numbers, int len)
+void	two_cases(t_stacks *stacks)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (numbers[i] == numbers[i + 1])
-		return (1);
-	while (i < len)
-	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (numbers[i] == numbers[j])
-				return (1);
-		j++;
-		}
-	i++;
-	}
-	return (0);
+	if (stacks->stacks_a <= 2)
+}
+
+void	three_cases(t_stacks *stacks)
+{
+	
+}
+
+void	five_cases(t_stacks *stacks)
+{
+	
 }
