@@ -6,22 +6,46 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:30:42 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 10:29:29 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/27 18:53:20 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_stacks *stacks)
+void	swap_a(t_stacks *stacks)
 {
-	int	temp1;
-	int	temp2;
+	int	temp;
 
-	temp1 = stacks->stack_a[0];
-	temp2 = stacks->stack_b[0];
-	stacks->stack_a[0] = temp2;
-	stacks->stack_b[0] = temp1;
+	if (stacks->size_a >= 2)
+	{
+		temp = stacks->stack_a[0];
+		stacks->stack_a[0] = stacks->stack_a[1];
+		stacks->stack_a[1] = temp;
+	}
+	else
+		return ;
 }
+
+void	swap_b(t_stacks *stacks)
+{
+	int	temp;
+
+	if (stacks->size_b >= 2)
+	{
+		temp = stacks->stack_b[0];
+		stacks->stack_b[0] = stacks->stack_b[1];
+		stacks->stack_b[1] = temp;
+	}
+	else
+		return ;
+}
+
+void	swap_ss(t_stacks *stacks)
+{
+	swap_a(stacks);
+	swap_b(stacks);
+}
+
 
 // #include <stdio.h>
 // int main (void)
@@ -47,7 +71,7 @@ void	swap(t_stacks *stacks)
 // 	}
 // 	stacks.size_a = size;
 //     stacks.size_b = size;
-// 	swap(&stacks);
+// 	swap_a(&stacks);
 // 	i = 0;
 // 	j = 0;
 // 	printf("stack A:\n");

@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:06:51 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 10:49:47 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/09/27 19:32:50 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,16 @@ void	mensage_error_free_long(long *stack);
 void	mensage_error_free_struct(t_stacks *stacks);
 void	clean_copy_arr(long *numbers, char *str);
 void	create_struct_stacks(t_stacks *stacks, int *stack, int size);
+void	two_numbers(t_stacks *stacks);
+void	three_numbers(t_stacks *stacks);
 
 //.......................PUSH_SWAP INSTRUCTIONS.......................
 
 void	push_a(t_stacks *stacks);
 void	push_b(t_stacks *stacks);
-void	swap(t_stacks *stacks);
+void	swap_a(t_stacks *stacks);
+void	swap_b(t_stacks *stacks);
+void	swap_ss(t_stacks *stacks);
 void	rotate_b(t_stacks *stacks);
 void	rotate_a(t_stacks *stacks);
 void	rrotate_a(t_stacks *stacks);
