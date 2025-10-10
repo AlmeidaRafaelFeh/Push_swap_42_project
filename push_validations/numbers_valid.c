@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:20:07 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/26 20:29:14 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:49:21 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,5 @@ void	clean_copy_arr(long *numbers, char *str)
 		while (ft_ispace(str[j]))
 			j++;
 	}
+	free(str);
 }

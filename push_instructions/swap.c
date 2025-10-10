@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:30:42 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 18:53:20 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:35:34 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	swap_ss(t_stacks *stacks)
 	swap_a(stacks);
 	swap_b(stacks);
 }
-
 
 // #include <stdio.h>
 // int main (void)
