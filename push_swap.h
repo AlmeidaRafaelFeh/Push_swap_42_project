@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:06:51 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/10 15:52:55 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/10 20:43:49 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,21 @@ typedef struct s_stacks
 	int	size_b;
 }	t_stacks;
 
+typedef enum e_location
+{
+    TOP_A,
+    BOT_A,
+    TOP_B,
+    BOT_B
+}   t_location;
+
 typedef struct s_chunk_info
 {
 	int			chunk_size;
-	int			chunk_count;
-	int			remainder;
-	int			current_chunk;
-	int			min_index;
-	int			max_index;
+	int			min_value;
+	int			med_value;
+	int			max_value;
+	int			location;
 }	t_chunk_info;
 
 char			*parse_args(int ac, char *av[]);
@@ -56,7 +63,8 @@ void			two_numbers(t_stacks *stacks);
 void			three_numbers(t_stacks *stacks);
 void			five_numbers(t_stacks *stacks);
 void			lower_cases(t_stacks *stacks);
-t_chunk_info	get_chunk_info(t_stacks *stacks);
+void			recursive_sort (t_stacks *stacks, int min, int max, int location);
+t_chunk_info	get_chunk_info(int min, int max);
 
 //.......................PUSH_SWAP INSTRUCTIONS.......................
 
