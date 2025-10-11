@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:06:51 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/10 20:43:49 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:32:24 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int				numbers_len(char *str);
 int				is_min_max(long *str, int len);
 int				ft_check_duplicates(long *numbers, int len);
 int				*numbers_valid(char *str, int len_numbers);
+int				get_top_value(t_stacks *stacks, int location);
 long			ft_atol(const char *nptr);
 void			new_stack_index(int *stack, int *size);
 void			copy_stack_aux(int *stack, int *aux, int *size);
@@ -61,6 +62,8 @@ void			clean_copy_arr(long *numbers, char *str);
 void			create_struct_stacks(t_stacks *stacks, int *stack, int size);
 void			two_numbers(t_stacks *stacks);
 void			three_numbers(t_stacks *stacks);
+void			rotate_location(t_stacks *stacks, int location);
+void			push_to(int from, int to, t_stacks *stacks);
 void			five_numbers(t_stacks *stacks);
 void			lower_cases(t_stacks *stacks);
 void			recursive_sort (t_stacks *stacks, int min, int max, int location);
