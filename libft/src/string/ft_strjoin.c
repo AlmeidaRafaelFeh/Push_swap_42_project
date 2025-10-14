@@ -30,12 +30,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s1[i])
 	{
 		newstr[i] = s1[i];
-	i++;
+		i++;
 	}
 	while (s2[j])
 	{
 		newstr[i + j] = s2[j];
-	j++;
+		j++;
 	}
 	newstr[i + j] = '\0';
 	return (newstr);

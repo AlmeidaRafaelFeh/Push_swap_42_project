@@ -42,5 +42,5 @@ void	push_to(int from, int to, t_stacks *stacks)
 	if (to == TOP_A || to == BOT_A)
 		push_a(stacks);
 	else if (to == TOP_B || to == BOT_B)
-		push_b(stacks); 
+		push_b(stacks);
 }

@@ -41,7 +41,6 @@ typedef struct s_chunk_info
 	int			min_value;
 	int			med_value;
 	int			max_value;
-	int			location;
 }	t_chunk_info;
 
 char			*parse_args(int ac, char *av[]);

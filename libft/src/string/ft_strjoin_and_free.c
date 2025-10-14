@@ -28,12 +28,12 @@ char	*ft_strjoin_and_free(char *s1, char const *s2)
 	while (s1[i])
 	{
 		newstr[i] = s1[i];
-	i++;
+		i++;
 	}
 	while (s2[j])
 	{
 		newstr[i + j] = s2[j];
-	j++;
+		j++;
 	}
 	free(s1);
 	newstr[i + j] = '\0';

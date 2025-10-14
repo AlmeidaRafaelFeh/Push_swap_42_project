@@ -22,6 +22,8 @@ t_chunk_info	get_chunk_info(int min, int max)
 	info.min_value = min;
 	info.med_value = min + info.chunk_size;
 	info.max_value = min + info.chunk_size * 2;
+	if (info.max_value > max)
+		info.max_value = max;
 	return (info);
 }
 
@@ -31,11 +33,14 @@ void	recursive_sort(t_stacks *stacks, int min, int max, int location)
 
 	info = get_chunk_info(min, max);
 	if (max - min <= 2)
+	{
 		lower_cases(stacks);
+		return ;
+	}
 	split_chunk(stacks, info, location);
-	recursive_sort(stacks, info.med_value + 1, info.max_value, BOT_A);
-	recursive_sort(stacks, info.min_value + 1, info.med_value, TOP_B);
-	recursive_sort(stacks, info.min_value, info.med_value - 1, BOT_B);
+	recursive_sort(stacks, info.max_value + 1, max, BOT_A);
+	recursive_sort(stacks, info.med_value + 1, info.max_value, TOP_B);
+	recursive_sort(stacks, info.min_value, info.med_value, BOT_B);
 }
 
 void	split_chunk(t_stacks *stacks, t_chunk_info info, int location)
@@ -47,11 +52,11 @@ void	split_chunk(t_stacks *stacks, t_chunk_info info, int location)
 	while (move < info.chunk_size)
 	{
 		top_value = get_top_value(stacks, location);
-		if (top_value >= info.med_value + 1 && top_value <= info.max_value)
+		if (top_value >= info.max_value)
 			rotate_location(location, stacks);
-		else if (top_value >= info.min_value + 1 && top_value <= info.med_value)
+		else if (top_value >= info.med_value && top_value < info.max_value)
 			push_to(location, TOP_B, stacks);
-		else if (top_value >= info.min_value && top_value <= info.med_value - 1)
+		else if (top_value >= info.min_value && top_value < info.med_value)
 		{
 			push_to(location, TOP_B, stacks);
 			rotate_location(TOP_B, stacks);
@@ -59,4 +64,3 @@ void	split_chunk(t_stacks *stacks, t_chunk_info info, int location)
 	move++;
 	}
 }
-
