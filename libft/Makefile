@@ -66,7 +66,7 @@ CC =	cc
 CFLAGS =	-Wall -Wextra -Werror -I$(INCDIR)
 
 clear:
-	$(MAKE) -s all
+	@$(MAKE) -s all
 		@echo "                       .,,uod8B8bou,,."
 	@echo "              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:."
 	@echo "         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||"
@@ -105,20 +105,20 @@ clear:
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 $(OBJDIR)/%.o: src/%.c | $(OBJDIR)
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
-	mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJDIR)
 
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

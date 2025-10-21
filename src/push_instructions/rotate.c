@@ -6,11 +6,11 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:33:26 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 10:43:36 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:23:59 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	rotate_a(t_stacks *stacks)
 {
@@ -27,6 +27,7 @@ void	rotate_a(t_stacks *stacks)
 			i++;
 		}
 		stacks->stack_a[i] = temp;
+		ft_putstr_fd("ra\n", 1);
 	}
 	else
 		return ;
@@ -47,6 +48,7 @@ void	rotate_b(t_stacks *stacks)
 			i++;
 		}
 		stacks->stack_b[i] = temp;
+		ft_putstr_fd("rb\n", 1);
 	}
 	else
 		return ;

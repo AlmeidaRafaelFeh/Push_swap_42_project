@@ -6,11 +6,11 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:19:39 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/26 19:03:05 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:45 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	is_min_max(long *nb, int len)
 {

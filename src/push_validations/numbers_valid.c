@@ -6,11 +6,11 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:20:07 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/10 13:49:21 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:52 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	*numbers_valid(char *str, int len_numbers)
 {

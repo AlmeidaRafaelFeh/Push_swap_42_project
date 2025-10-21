@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   mensage_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:05:18 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/11 16:59:29 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/11 16:18:41 by rafreire          #+#    #+#             */
+/*   Updated: 2025/10/16 17:37:50 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char *av[])
+void	mensage_error(void)
 {
-	char		*args;
-	int			*stack;
-	int			size;
-	t_stacks	stacks;
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
 
-	if (ac < 2)
-		mensage_error();
-	args = parse_args(ac, av);
-	if (ft_only_number(args) == 1)
-	{
-		free(args);
-		mensage_error();
-	}
-	size = numbers_len(args);
-	stack = numbers_valid(args, size);
-	new_stack_index(stack, size);
-	create_struct_stacks(&stacks, stack, size);
-	recursive_sort(&stacks, 0, stacks.size_a, TOP_A);
+void	mensage_error_free(int *stack)
+{
+	free(stack);
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
+
+void	mensage_error_free_long(long *stack)
+{
+	free(stack);
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
+
+void	mensage_error_free_struct(t_stacks *stacks)
+{
+	free(stacks->stack_a);
+	free(stacks->stack_b);
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

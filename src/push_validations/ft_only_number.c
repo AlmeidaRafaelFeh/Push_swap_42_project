@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_duplicates.c                              :+:      :+:    :+:   */
+/*   ft_only_number.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 20:19:36 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/27 14:29:27 by rafreire         ###   ########.fr       */
+/*   Created: 2025/09/09 20:19:41 by rafreire          #+#    #+#             */
+/*   Updated: 2025/10/16 17:37:47 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-int	ft_check_duplicates(long *numbers, int len)
+int	ft_only_number(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (numbers[i] == numbers[i + 1])
-		return (1);
-	while (i < len)
+	while (str[i] != '\0')
 	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (numbers[i] == numbers[j])
-				return (1);
-		j++;
-		}
+		while (ft_ispace(str[i]))
+			i++;
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		if (!ft_isdigit(str[i]))
+			return (1);
+		while (ft_isdigit(str[i]))
+			i++;
+		if (str[i] && !ft_ispace(str[i]))
+			return (1);
 	i++;
 	}
 	return (0);
