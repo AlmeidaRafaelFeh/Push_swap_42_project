@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:06:51 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/22 21:54:12 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:27:16 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int				*numbers_valid(char *str, int len_numbers);
 int				get_top_value(t_stacks *stacks, int location);
 int				exists_in_stack(t_stacks *stacks,
 					int location, int min, int max);
-int				find_cheaper(t_stacks *stacks, int min, int max);
-int 			find_at_start(t_stacks *stacks, int min, int max);
-int				find_at_end(t_stacks *stacks, int min, int max);
+int				find_cheaper(t_stacks *stacks);
+int				find_at_start(t_stacks *stacks);
+int				find_at_end(t_stacks *stacks);
 long			ft_atol(const char *nptr);
 void			new_stack_index(int *stack, int *size);
 void			copy_stack_aux(int *stack, int *aux, int *size);
@@ -70,15 +70,15 @@ void			two_numbers_b(t_stacks *stacks);
 void			three_numbers_b(t_stacks *stacks);
 void			base_cases(t_stacks *stacks);
 void			five_numbers(t_stacks *stacks);
-void			rotate_location(t_stacks *stacks, int location);
-void 			rotate_location(t_stacks *stacks, int location);
+void			rotate_chunk(t_stacks *stacks, int location);
 void			push_to(int from, int to, t_stacks *stacks);
-void			ordenate_stack_b(t_stacks *stacks, int min,
-					int max, int location);
+void			ordenate_stack_b(t_stacks *stacks);
 void			lower_cases(t_stacks *stacks, int location, int min, int max);
 void			recursive_sort(t_stacks *stacks, int min,
 					int max, int location);
 void			split_chunk(t_stacks *stacks, t_chunk_info info, int location);
+void			move_cheaper_first(t_stacks *stacks, int location,
+					int min, int max);
 t_chunk_info	get_chunk_info(int min, int max);
 
 //.......................PUSH_SWAP INSTRUCTIONS.......................

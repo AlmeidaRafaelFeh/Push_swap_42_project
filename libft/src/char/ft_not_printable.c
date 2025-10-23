@@ -6,13 +6,13 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:49:28 by rafreire          #+#    #+#             */
-/*   Updated: 2025/09/13 14:13:46 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:51:29 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_not_printable(char c)
 {
-	unsigned char uc;
+	unsigned char	uc;
 
 	uc = (unsigned char)c;
 	if ((uc <= 31) || uc == 127)

@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 18:28:00 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/21 20:28:56 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:29:48 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_top_value(t_stacks *stacks, int location)
 	return (0);
 }
 
-void	rotate_location(t_stacks *stacks, int location)
+void	rotate_chunk(t_stacks *stacks, int location)
 {
 	if (location == TOP_A)
 		rotate_a(stacks);

@@ -7,7 +7,8 @@ LIBFT_DIR = libft
 PUSH_ALGORITHM = \
 				all_cases.c \
 				push_utils.c \
-				utils_stack.c
+				utils_stack.c \
+				optmization_a.c
 
 PUSH_INSTRUCTIONS = \
 					push.c \
