@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_not_printable(unsigned char c)
+int	ft_not_printable(char c)
 {
-	if ((c >= 0 && c <= 31) || c == 127)
-	{
+	unsigned char uc;
+
+	uc = (unsigned char)c;
+	if ((uc <= 31) || uc == 127)
 		return (1);
-	}
 	return (0);
 }
