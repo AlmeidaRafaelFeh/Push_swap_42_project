@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:05:18 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/21 20:26:29 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/27 14:33:05 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ int	main(int ac, char *av[])
 	stack = numbers_valid(args, size);
 	new_stack_index(stack, &size);
 	create_struct_stacks(&stacks, stack, size);
-	if (stacks.size_a <= 5)
-		base_cases(&stacks);
-	else
-		recursive_sort(&stacks, 0, stacks.size_a, TOP_A);
+	sort_main(&stacks);
 	free(stacks.stack_a);
 	free(stacks.stack_b);
 }

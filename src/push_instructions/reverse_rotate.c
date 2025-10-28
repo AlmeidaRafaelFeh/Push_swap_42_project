@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:32:56 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/20 18:24:17 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/27 23:01:45 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	rrotate_b(t_stacks *stacks)
 		return ;
 }
 
-void	rrrotate(t_stacks	*stacks)
+void	double_rrotate(t_stacks *stacks)
 {
 	rrotate_a(stacks);
 	rrotate_b(stacks);

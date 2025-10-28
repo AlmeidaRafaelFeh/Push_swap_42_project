@@ -6,86 +6,94 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 18:28:00 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/23 10:29:48 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/27 23:25:40 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_top_value(t_stacks *stacks, int location)
+int	find_higher_index_b(t_stacks *stack)
 {
-	if (location == TOP_A)
-		return (stacks->stack_a[0]);
-	else if (location == BOT_A)
-		return (stacks->stack_a[stacks->size_a - 1]);
-	else if (location == TOP_B)
-		return (stacks->stack_b[0]);
-	else if (location == BOT_B)
-		return (stacks->stack_b[stacks->size_b - 1]);
-	return (0);
+	int	higher;
+	int index_higher;
+	int i;
+
+	higher = stack->stack_b[0];
+	index_higher = 0;
+	i = 1;
+	if (stack->size_b == 0)
+		return -1;
+	while (i < stack->size_b)
+	{
+		if (stack->stack_b[i] > higher)
+		{
+			higher = stack->stack_b[i];
+			index_higher = i;
+		}
+	i++;
+	}
+	return (index_higher);
 }
 
-void	rotate_chunk(t_stacks *stacks, int location)
+int	find_index_a(t_stacks *stack, int start, int end)
 {
-	if (location == TOP_A)
-		rotate_a(stacks);
-	else if (location == TOP_B)
-		rotate_b(stacks);
-	else if (location == BOT_A)
-		rrotate_a(stacks);
-	else if (location == BOT_B)
-		rrotate_b(stacks);
+	int	i;
+
+	i = 0;
+	while(i < stack->size_a)
+	{
+		if (stack->stack_a[i] >= start &&  stack->stack_a[i] <= end)
+			return i;
+	i++;
+	}
+	return -1;
 }
 
-void	push_to(int from, int to, t_stacks *stacks)
+t_chunk	get_chunk_info(t_stacks *stack, int chunks)
 {
-	if (from == TOP_A && (to == TOP_B || to == BOT_B))
-		push_b(stacks);
-	else if (from == TOP_B && (to == TOP_A || to == BOT_A))
-		push_a(stacks);
-	else if (from == BOT_A && (to == TOP_B || to == BOT_B))
-	{
-		rrotate_a(stacks);
-		push_b(stacks);
-	}
-	else if (from == BOT_B && (to == TOP_A || to == BOT_A))
-	{
-		rrotate_b(stacks);
-		push_a(stacks);
-	}
+	t_chunk chunk;
+
+	chunk.att_size_a = stack->size_a;
+	chunk.chunk_size = (chunk.att_size_a + chunks - 1) / chunks;
+	chunk.chunk_start = 0;
+	chunk.chunk_end = chunk.chunk_size - 1;
+	if (chunk.chunk_end >= chunk.att_size_a)
+		chunk.chunk_end = chunk.att_size_a - 1;
+	return (chunk);
 }
 
-void	lower_cases(t_stacks *stacks, int location, int min, int max)
+void	rotate_until_top_a(t_stacks *stack, int idx)
 {
-	int	chunk_size;
+	int steps;
 
-	chunk_size = max - min;
-	if (location == TOP_A || location == BOT_A)
-	{
-		if (chunk_size == 2)
-			two_numbers_a(stacks);
-		else if (chunk_size == 3)
-			three_numbers_a(stacks);
-		else if (chunk_size == 1)
-			return ;
-	}
+	steps = 0;
+	if (idx <= stack->size_a / 2)
+		while (idx > 0)
+		{
+			rotate_a(stack);
+			idx--;
+		}
 	else
 	{
-		if (chunk_size == 2)
-			two_numbers_b(stacks);
-		else if (chunk_size == 3)
-			three_numbers_b(stacks);
-		else if (chunk_size == 1)
-			return ;
+		steps = stack->size_a - idx;
+		while (steps > 0)
+		{
+			rrotate_a(stack);
+			steps--;
+		}
 	}
 }
-
-void	base_cases(t_stacks *stacks)
+void	maybe_rotate_b(t_stacks *stack, t_chunk *chunk, int val_idx)
 {
-	if (stacks->size_a <= 2)
-		two_numbers_a(stacks);
-	else if (stacks->size_a == 3)
-		three_numbers_a(stacks);
-	else if (stacks->size_a <= 5)
-		five_numbers(stacks);
+	int	chunk_mid;
+	int	top_b;
+
+	top_b = 0;
+	chunk_mid = chunk->chunk_start + (chunk->chunk_size / 2);
+	if (stack->size_b > 0)
+    	top_b = stack->stack_b[0];
+	else
+    	top_b = -1;
+	if (val_idx <= chunk_mid || val_idx > top_b)
+		rotate_b(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 13:33:26 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/20 18:23:59 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/10/27 23:01:25 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,45 +53,9 @@ void	rotate_b(t_stacks *stacks)
 	else
 		return ;
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	long test[4] = {0, -2 , 4, 10};
-// 	int size = 4;
-// 	int i = 0;
-// 	int j = 0;
-// 	t_stacks	stacks;
 
-// 	stacks.stack_a = (int *)malloc(sizeof(int) * size);
-// 	stacks.stack_b = (int *)malloc(sizeof(int) * size);
-// 	while (i < size)
-// 	{
-// 		stacks.stack_a[i] = test[i];
-// 		i++; 
-// 	}
-// 	while (j < size)
-// 	{
-// 		stacks.stack_b[j] = test[j];
-// 		j++;
-// 	}
-// 	stacks.size_a = size;
-// 	stacks.size_b = size;
-// 	rotate_a(&stacks);
-// 	rotate_b(&stacks);
-// 	i = 0;
-// 	j = 0;
-// 	printf("stack A:\n");
-// 	while (i < stacks.size_a)
-// 	{
-// 		printf("%d\n", stacks.stack_a[i]);
-// 		i++;
-// 	}
-// 	printf("stack B:\n");
-// 	while (j < stacks.size_b)
-// 	{
-// 		printf("%d\n", stacks.stack_b[j]);
-// 		j++;
-// 	}
-// 	free(stacks.stack_a);
-// 	free(stacks.stack_b);
-// }
+void	double_rotate(t_stacks	*stacks)
+{
+	rotate_a(stacks);
+	rotate_b(stacks);
+}
