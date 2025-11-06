@@ -53,11 +53,8 @@ SRCS = \
 	src/list/ft_lstiter.c \
 	src/list/ft_lstmap.c \
 	\
-	src/gnl/gnl_list/get_next_line_list_utils.c \
-	src/gnl/gnl_list/get_next_line_list.c \
-	\
-	src/gnl/gnl_array/get_next_line_utils.c \
-	src/gnl/gnl_array/get_next_line.c \
+	src/gnl/get_next_line_utils.c \
+	src/gnl/get_next_line.c \
 	\
 	
 OBJS = $(SRCS:src/%.c=$(OBJDIR)/%.o)

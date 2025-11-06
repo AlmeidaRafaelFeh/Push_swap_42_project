@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:06:51 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/27 23:36:11 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/11/06 10:47:09 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ typedef struct s_stacks
 
 typedef struct s_chunks
 {
-	int att_size_a;
-	int chunk_size;
-	int chunk_start;
-	int chunk_end;
+	int	att_size_a;
+	int	chunk_size;
+	int	chunk_start;
+	int	chunk_end;
 }	t_chunk;
 
 char			*parse_args(int ac, char *av[]);

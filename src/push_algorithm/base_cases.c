@@ -6,7 +6,7 @@
 /*   By: rafreire <rafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:37:39 by rafreire          #+#    #+#             */
-/*   Updated: 2025/10/27 16:27:14 by rafreire         ###   ########.fr       */
+/*   Updated: 2025/11/06 10:51:56 by rafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	five_numbers(t_stacks *stacks)
 		push_a(stacks);
 	}
 }
+
 void	base_cases(t_stacks *stacks)
 {
 	if (stacks->size_a <= 2)
