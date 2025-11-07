@@ -1,3 +1,8 @@
-*.sh
-*.txt
-/nfs/homes/rafreire/projects_42/Milestone_2/push_swap/pro_checker
+push_swap_test_linux.sh
+pro_checker
+push_swap_test.sh
+traces.txt
+num.txt
+checker_Mac
+checker_linux
+0
